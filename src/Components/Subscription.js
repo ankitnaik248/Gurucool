@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Dimensions, ImageBackground, Alert, TouchableOpacity } from 'react-native';
 import Header from "./HeaderSection";
 import { LinearGradient } from 'expo';
+import * as Font from 'expo-font';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
 var { height, width } = Dimensions.get('window');
@@ -15,7 +16,7 @@ export default class Subscription extends Component {
                     <Header />
                 </View>
 
-                <View style={{width: "100%", height:"25%", top: 0, bottom: 0, left: 0, right: 0 }} >
+                <View style={{width: "100%", height:"28%", top: 0, bottom: 0, left: 0, right: 0 }} >
                     <Image style = {{width: "100%", height: "100%"}} source={require('../Images/subscription_page_banner.png')} />
                 </View>
 
@@ -27,8 +28,8 @@ export default class Subscription extends Component {
                     Megatron is awakened by a resurrected Unicron with the intention of seeking vengeance on the Autobots and obliterating Cybetron. Its Unicron vs the world as this forces an unlikely alliance between the Autobots, Decepticons, Predaking and Predacons, who join forces in a never before seen epic battle to protect the Earth and Cybetron.
                     </Text>
 
-                    <View style = {{ flex: 1, flexDirection: "row", justifyContent: "space-between", textAlign: "center"}}>
-                        <View style = {{ width: (width / 3) - 7, height: "90%", marginLeft: 3 }}>
+                    <View style = {{ flex: 1, flexDirection: "row", justifyContent: "space-between", textAlign: "center", backgroundColor: "#00000000"}}>
+                        <View style = {{ width: (width / 3) - 7, height: "95%", marginLeft: 3 }}>
                             <LinearGradient colors={['#FFFFFF', '#FCE5BC']} style={styles.linearGradient}>
                                 <Text style={styles.buttonText}>
                                     6 Months
@@ -42,7 +43,7 @@ export default class Subscription extends Component {
                                 </Text>
                             </LinearGradient>
                         </View>
-                        <View style = {{ width: (width / 3) - 7, height: "90%", marginLeft: 3 }}>
+                        <View style = {{ width: (width / 3) - 7, height: "95%", marginLeft: 3 }}>
                             <LinearGradient colors={['#FFFFFF', '#FCE5BC']} style={styles.linearGradient}>
                                 <Text style={styles.buttonText}>
                                     8 Months
@@ -56,7 +57,7 @@ export default class Subscription extends Component {
                                 </Text>
                             </LinearGradient>
                         </View>
-                        <View style = {{ width: (width / 3) - 7, height: "90%", marginLeft: 3 }}>
+                        <View style = {{ width: (width / 3) - 7, height: "95%", marginLeft: 3 }}>
                             <LinearGradient colors={['#FFFFFF', '#FCE5BC']} style={styles.linearGradient}>
                                 <Text style={styles.buttonText}>
                                     12 Months
@@ -75,7 +76,7 @@ export default class Subscription extends Component {
                         
                     
                 </View>
-                <TouchableOpacity style = {{height: "15%", width: "100%", justifyContent: "center" , alignItems: "center"}}>
+                <TouchableOpacity style = {{height: "15%", width: "100%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}}>
                     <Image style = {{width: "50%", height: "50%"}} source={require('../Images/subscribe_now_button.png')} />
                 </TouchableOpacity>
             </View>
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
         fontFamily: "sans-serif",
         fontSize: 15,
         fontWeight: "300",
-        color: "#E44236",
+        color: "#ed298f",
         alignItems: "center",
         paddingVertical: "3%"
     },
@@ -110,10 +111,10 @@ const styles = StyleSheet.create({
         top:"10%",
         left: "5%",
         right: "2%",
-        paddingVertical: "2%",
-        color: "#2C3335",
+        paddingVertical: "3%",
+        color: "#ed298f",
         fontSize: 10,
-        fontFamily: "sans-serif",
+        fontFamily: "sans",
         textAlign: "left"
     },
     linearGradient: {
