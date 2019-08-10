@@ -33,10 +33,11 @@ export default class DownloadList extends Component {
                     subtitle="Vice Chairman"
                     chevronColor="white"
                     chevron
-                    rightIcon={<Icon name={'play'} size={20}/>}
+                    // rightIcon={<Icon name={'play'} size={20}/>}
+                    containerStyle = {{ marginBottom: 10}}
                 />
 
-<ListItem
+                <ListItem
                     Component={TouchableScale}
                     friction={90} 
                     tension={100} // These props are passed to the parent component (here TouchableScale)
@@ -54,7 +55,8 @@ export default class DownloadList extends Component {
                     subtitle="Vice Chairman"
                     chevronColor="white"
                     chevron
-                    rightIcon={<Icon name={'play'} size={20}/>}
+                    // rightIcon={<Icon name={'play'} size={20}/>}
+                    containerStyle = {{ marginBottom: 10}}
                 />
                </View> 
             </ImageBackground>
