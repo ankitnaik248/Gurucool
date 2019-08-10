@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image, TextInput, Dimensions, ImageBackground, 
 import { SearchBar } from 'react-native-elements';
 // import LinearGradient from 'react-native-linear-gradient';
 
+var { height, width } = Dimensions.get('window');
 
 export default class Search extends Component {
 
@@ -19,14 +20,38 @@ export default class Search extends Component {
         const { search } = this.state;
     
         return (
-            <View styles={{ flex:1, position: "absolute", top: 6 }}>
-            <SearchBar
-               placeholder="Type Here..."
-               onChangeText={this.updateSearch}
-               value={search}
-               containerStyle = {{ alignItems:'center', justifyContent:'center', marginTop: "10%" }}
-            />
+          <View style={styles.container}>
+              <ImageBackground source = { require("../Images/sub_desc_bg.jpg") } style = {[styles.backgroundImage,{justifyContent:"center"}]}>
+                <View style = { styles.headerPara }>
+                  <SearchBar
+                    placeholder="Type Here..."
+                    onChangeText={this.updateSearch}
+                    value={search}
+                    containerStyle = {{ alignItems:'center', justifyContent:'center'}}
+                  />
+                </View>
+              </ImageBackground>  
          </View>
-        );
-      }
+      );
+    }
 }    
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center'
+  },
+  backgroundImage: {
+    flex: 1,
+    width: width,
+    height: height,
+ },
+ headerPara: {
+    position: "absolute", 
+    top: "5%",
+    bottom: 0,
+    right: 0,
+    left: 0
+  }
+});  
