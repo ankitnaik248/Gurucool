@@ -19,7 +19,7 @@ export default class LoginPage extends Component {
             </View>
 
             <View style = { styles.textPara }>
-              <Text style = { styles.button } onPress = { () => { this.props.navigation.navigate("DownloadList") }} >GET OTP</Text>
+              <Text style = { styles.button } onPress = { () => { this.props.navigation.navigate("MainPage") }} >GET OTP</Text>
             </View>
 
             <View style = { styles.textPara }>

@@ -77,7 +77,7 @@ export default class Subscription extends Component {
                     
                 </View>
                 <TouchableOpacity style = {{height: "15%", width: "100%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}}>
-                    <Image style = {{width: "50%", height: "50%"}} source={require('../Images/subscribe_now_button.png')} />
+                    <Image style = {{width: "70%", height: "50%"}} source={require('../Images/subscribe_now_button.png')} />
                 </TouchableOpacity>
             </View>
         );
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         paddingVertical: "3%",
         color: "#ed298f",
         fontSize: 10,
-        fontFamily: "sans",
+        fontFamily: "sans-serif",
         textAlign: "left"
     },
     linearGradient: {

@@ -21,7 +21,7 @@ export default class Description extends Component {
                             <Text style = {{ fontSize: 12, alignContent: "center", top: 6}}> Kids | English | 2013 | 01hr 1mins</Text>
                             <Image source = { require("../Images/watchlist_icon.png") } style = {{ height:36, width:36, marginLeft: 8}}/>
                             <Image source = { require("../Images/share_icon.png") } style = {{ height:36, width:36, paddingLeft: 2}}/>
-                            <Image source = { require("../Images/download_icon.png") } style = {{ height:36, width:36, paddingLeft: 2}}/>
+                            <TouchableOpacity onPress = { () => { this.props.navigation.navigate("DownloadList") }}><Image source = { require("../Images/download_icon.png") } style = {{ height:36, width:36, paddingLeft: 2}}/></TouchableOpacity>
                         </View>
                         <View style = {[styles.headerPara, {flexDirection: "row", top:70, paddingLeft: "3%"}]}>
                             <Text>
@@ -32,7 +32,7 @@ export default class Description extends Component {
                         <View style = {[styles.headerPara, {flexDirection: "row", top:20, paddingLeft: "3%", alignItems: "center", width: width}]}>
                             {/* <Image source = { require("../Images/play_now_button.png") } style = {{ height:36, width: 120 }}/>   
                             <Image source = { require("../Images/trailer_button.png") } style = {{ height:36, width: 120, marginLeft: 5 }}/> */}
-                            <TouchableOpacity style = {{height: "2%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}}>
+                            <TouchableOpacity  onPress = { () => { this.props.navigation.navigate("Subscription") }} style = {{height: "2%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}}>
                                 <Image source = { require("../Images/play_now_button.png") } style = {{ height:36, width: 120 }}/>
                             </TouchableOpacity>
                             <TouchableOpacity style = {{height: "2%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}}>
