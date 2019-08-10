@@ -5,6 +5,7 @@ import Register from "./src/Components/Register";
 import Subscription from "./src/Components/Subscription";
 import Description from "./src/Components/Description";
 import Search from "./src/Components/Search";
+import DownloadList from "./src/Components/DownloadList";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const MainNaigator = createStackNavigator({
@@ -12,7 +13,8 @@ const MainNaigator = createStackNavigator({
   Register: {screen: Register},
   Subscription: {screen: Subscription},
   Description: {screen: Description},
-  Search: {screen: Search}
+  Search: {screen: Search},
+  DownloadList: {screen: DownloadList}
 },
 {
   headerMode: 'none',

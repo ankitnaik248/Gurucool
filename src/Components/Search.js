@@ -27,7 +27,7 @@ export default class Search extends Component {
                     placeholder="Type Here..."
                     onChangeText={this.updateSearch}
                     value={search}
-                    containerStyle = {{ alignItems:'center', justifyContent:'center'}}
+                    containerStyle = {{ alignItems:'center', justifyContent:'center', backgroundColor: ""}}
                   />
                 </View>
               </ImageBackground>  
