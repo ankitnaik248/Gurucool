@@ -1,11 +1,93 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Dimensions, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Dimensions, ScrollView,Button, ImageBackground, TouchableHighlight } from 'react-native';
 import { SocialIcon} from 'react-native-elements';
+import * as firebase from 'firebase';
+import {Linking, WebBrowser} from 'expo'
+import { TabView, SceneMap } from 'react-native-tab-view';
+
+
 
 var { height, width } = Dimensions.get('window');
+const captchaUrl = `https://gurucool-7c0fc.firebaseapp.com/captcha.html?appurl=${Linking.makeUrl('GurucoolProject')}`
+
+
 
 export default class LoginPage extends Component {
+
+
+  
+  onLoginClick = () => {
+//   //var phoneNumber = getPhoneNumberFromUserInput();
+// var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+// firebase.auth().signInWithPhoneNumber("917208801002", appVerifier)
+//     .then(function (confirmationResult) {
+//       // SMS sent. Prompt user to type the code from the message, then sign the
+//       // user in with confirmationResult.confirm(code).
+//       window.confirmationResult = confirmationResult;
+//     }).catch(function (error) {
+//       // Error; SMS not sent
+//       // ...
+//     });
+this.props.navigation.navigate("MainPage");
+  };
+  onFBLoginClick = () => {
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+    };
+
+    
+
   render () {
+    // if (this.state.user)
+    //         return (
+    //             this.props.navigation.navigate("Main")
+    //         )
+
+    //     if (!this.state.confirmationResult)
+    //         return (
+    //             <ScrollView style={{padding: 20, marginTop: 20}}>
+    //                 <TextInput
+    //                     value={this.state.phone}
+    //                     onChangeText={this.onPhoneChange}
+    //                     keyboardType="phone-pad"
+    //                     placeholder="Your phone"
+    //                 />
+    //                 <Button
+    //                     onPress={this.onPhoneComplete}
+    //                     title="Next"
+    //                 />
+    //             </ScrollView>
+    //         )
+    //     else
+    //         return (
+    //             <ScrollView style={{padding: 20, marginTop: 20}}>
+    //                 <TextInput
+    //                     value={this.state.code}
+    //                     onChangeText={this.onCodeChange}
+    //                     keyboardType="numeric"
+    //                     placeholder="Code from SMS"
+    //                 />
+    //                 <Button
+    //                     onPress={this.onSignIn}
+    //                     title="Sign in"
+    //                 />
+    //             </ScrollView>
+    //         )
       return (
         <View style={styles.container}> 
           <ImageBackground source = { require("../Images/Background.jpg") } style = {[styles.backgroundImage,{justifyContent:"center"}]}>
@@ -17,9 +99,10 @@ export default class LoginPage extends Component {
             <View style={ styles.textPara }>
               <Text style = {{ color: "#fae848", width: 200, textAlign: "center", fontSize:12 }}>Send an OTP to verify your Mobile Number</Text>
             </View>
+            
 
             <View style = { styles.textPara }>
-              <Text style = { styles.button } onPress = { () => { this.props.navigation.navigate("MainPage") }} >GET OTP</Text>
+              <Text style = { styles.button } onPress = { this.onLoginClick} >GET OTP</Text>
             </View>
 
             <View style = { styles.textPara }>
@@ -35,7 +118,9 @@ export default class LoginPage extends Component {
 
             <View style = {[styles.textPara, {flexDirection: "row", top: 402, }]}>
               <View style = {{ paddingHorizontal:5,opacity:1}}>
+              <TouchableHighlight onPress={this.onFBLoginClick}>
                 <Image source = { require("../Images/icon_facebook.png") } style = {{ height:36, width:36}}/>
+              </TouchableHighlight>
               </View>
               <View style = {{ paddingHorizontal:5,opacity:1}}>
                 <Image source = { require("../Images/icon_insta.png") } style = {{ height:36, width:36}}/>
@@ -50,7 +135,7 @@ export default class LoginPage extends Component {
 
               <View style = { styles.textPara }>
                 <Text style = { {color: "#fae848", width: 300, textAlign: "center", top: 170, fontSize:13} }>Don't Have an account ? <Text style = {{ color: '#E91E63',
-        textDecorationLine: 'underline',color:"#FFF"}} onPress = { () => { this.props.navigation.navigate("Register") }}>Click Here</Text
+        textDecorationLine: 'underline',color:"#FFF"}}  onPress = { () => { this.props.navigation.navigate("Register") }}>Click Here</Text
                 ></Text>
               </View>
           </ImageBackground>

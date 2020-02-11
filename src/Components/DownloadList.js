@@ -27,10 +27,10 @@ export default class DownloadList extends Component {
                     }}
                     ViewComponent={LinearGradient} // Only if no expo
                     leftAvatar={{ rounded: true, source: { uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' } }}
-                    title="Chris Jackson"
+                    title="Pokemon"
                     titleStyle={{ color: 'white', fontWeight: 'bold' }}
                     subtitleStyle={{ color: 'white' }}
-                    subtitle="Vice Chairman"
+                    subtitle="Pokemon Season 1"
                     chevronColor="white"
                     chevron
                     // rightIcon={<Icon name={'play'} size={20}/>}
@@ -49,10 +49,10 @@ export default class DownloadList extends Component {
                     }}
                     ViewComponent={LinearGradient} // Only if no expo
                     leftAvatar={{ rounded: true, source: { uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' } }}
-                    title="Chris Jackson"
+                    title="Doremon"
                     titleStyle={{ color: 'white', fontWeight: 'bold' }}
                     subtitleStyle={{ color: 'white' }}
-                    subtitle="Vice Chairman"
+                    subtitle="Doremon Season 2"
                     chevronColor="white"
                     chevron
                     // rightIcon={<Icon name={'play'} size={20}/>}

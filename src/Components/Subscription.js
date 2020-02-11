@@ -3,11 +3,22 @@ import { StyleSheet, Text, View, Image, TextInput, Dimensions, ImageBackground, 
 import Header from "./HeaderSection";
 import { LinearGradient } from 'expo';
 import * as Font from 'expo-font';
+import { Linking } from 'react-native';
+
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
 var { height, width } = Dimensions.get('window');
 
 export default class Subscription extends Component {
+
+    pay = () => {
+        Linking.openURL('https://p-y.tm/Mz-LfgT');
+
+
+    
+    };
+
+
 
     render () {
         return (
@@ -76,7 +87,7 @@ export default class Subscription extends Component {
                         
                     
                 </View>
-                <TouchableOpacity style = {{height: "15%", width: "100%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}}>
+                <TouchableOpacity onPress={this.pay}  on style = {{height: "15%", width: "100%", justifyContent: "center" , alignItems: "center", backgroundColor: "#00000000"}} >
                     <Image style = {{width: "70%", height: "50%"}} source={require('../Images/subscribe_now_button.png')} />
                 </TouchableOpacity>
             </View>
